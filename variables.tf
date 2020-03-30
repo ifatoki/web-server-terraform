@@ -8,7 +8,7 @@ variable "aws_amis" {
   }
 }
 
-variable "route_table_id" {
+variable "vpc_route_table_id" {
   type = string
 }
 
