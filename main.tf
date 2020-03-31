@@ -11,7 +11,7 @@ resource "aws_route" "internet_access" {
 }
 
 resource "aws_elb" "web" {
-  name = "terraform-example-elb"
+  name = "terraform-example-elb-${var.app_version}"
 
   subnets         = [var.default_subnet_id]
   security_groups = [var.elb_sg_id]

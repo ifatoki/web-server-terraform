@@ -36,3 +36,7 @@ variable "aws_region" {
   description = "AWS region to launch servers."
   default     = "us-east-1"
 }
+
+variable "app_version" {
+  type = string
+}
