@@ -1,9 +1,3 @@
-# Specify the provider and access details
-provider "aws" {
-  region = var.aws_region
-}
-
-# Grant the VPC internet access on its main route table
 resource "aws_route" "internet_access" {
   route_table_id         = var.vpc_route_table_id
   destination_cidr_block = "0.0.0.0/0"
