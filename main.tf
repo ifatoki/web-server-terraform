@@ -1,9 +1,3 @@
-resource "aws_route" "internet_access" {
-  route_table_id         = var.vpc_route_table_id
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = var.default_ig_id
-}
-
 resource "aws_elb" "web" {
   name = "terraform-example-elb-${var.app_version}"
 
