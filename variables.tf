@@ -8,19 +8,11 @@ variable "aws_amis" {
   }
 }
 
-variable "vpc_route_table_id" {
-  type = string
-}
-
 variable "elb_sg_id" {
   type = string
 }
 
 variable "default_sg_id" {
-  type = string
-}
-
-variable "default_ig_id" {
   type = string
 }
 
