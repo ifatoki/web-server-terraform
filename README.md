@@ -32,7 +32,7 @@ output "web_server_a_zone_id" {
 | default_sg_id | Id for the Security Group to be applied to the EC2 instances | string | | Yes |
 | default_subnet_id | Id for the network subnet in which the resources would be placed | string | | Yes |
 | key_id | The ID for the key to be used with the EC2 instances | string | | Yes |
-| aws_region | The AWS region the resources would be deployed into | string | | Yes |
+| aws_region | The AWS region the resources would be deployed into | string | us-east-1 | Yes |
 | app_version | The label for the web server environment. This would be an a or b | string | | Yes|
 
 ## Outputs
