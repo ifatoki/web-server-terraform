@@ -11,6 +11,15 @@ resource "aws_elb" "web" {
     lb_port           = 80
     lb_protocol       = "http"
   }
+
+  # health checks
+  health_check {
+    healthy_threshold   = 3
+    unhealthy_threshold = 2
+    timeout             = 5
+    target              = "TCP:80"
+    interval            = 15
+  }
 }
 
 resource "aws_instance" "web" {
@@ -45,6 +54,8 @@ resource "aws_instance" "web" {
   # this should be on port 80
   provisioner "remote-exec" {
     inline = [
+      "cd /home/ubuntu/todo-app",
+      "git pull",
       "sudo apt-get -y update",
       "sudo apt-get -y install nginx",
       "sudo service nginx start",
